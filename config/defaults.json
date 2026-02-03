@@ -1,0 +1,68 @@
+{
+  "agency": {
+    "name": "Growth Infrastructure Agency",
+    "focus": "High-ticket backend revenue systems",
+    "typical_clients": [
+      "Online coaches",
+      "Consultants",
+      "Real estate funds",
+      "B2B service providers"
+    ]
+  },
+  "quality_standards": {
+    "vsl": {
+      "min_words": 3500,
+      "max_reading_level": 6,
+      "required_sections": ["HOOK", "PROBLEM", "SOLUTION", "PROOF", "OFFER", "CTA"]
+    },
+    "landing_page": {
+      "min_words": 500,
+      "max_reading_level": 6,
+      "required_sections": ["HERO", "PROOF", "CTA"]
+    },
+    "email": {
+      "max_subject_length": 50,
+      "min_words": 50,
+      "max_words": 500
+    }
+  },
+  "tools": {
+    "crm": "close.io",
+    "landing_pages": "v0.dev",
+    "automation": "zapier",
+    "scheduling": "calendly",
+    "payments": "fanbasis",
+    "communication": ["slack", "gmail"]
+  },
+  "workflow": {
+    "phases": [
+      {
+        "number": 1,
+        "name": "Discovery & Research",
+        "outputs": ["profile.md", "avatar.md", "competitive.md", "strategy_brief.md"]
+      },
+      {
+        "number": 2,
+        "name": "Strategy & Positioning",
+        "outputs": ["positioning_options.md", "strategy.md", "creative_brief.md"],
+        "requires_approval": true
+      },
+      {
+        "number": 3,
+        "name": "Asset Creation",
+        "outputs": ["vsl_script.md", "landing_page_copy.md", "email_sequence.md"],
+        "requires_approval": true
+      },
+      {
+        "number": 4,
+        "name": "Implementation",
+        "outputs": ["crm_architecture.md", "integration_map.md", "automation_sops.md"]
+      }
+    ]
+  },
+  "limits": {
+    "max_concurrent_agents": 3,
+    "context_warn_threshold": 0.6,
+    "context_block_threshold": 0.85
+  }
+}
