@@ -7,7 +7,7 @@ description: SOP for landing page structure, section order, and conversion best 
 
 ## Section Order (Proven Structure)
 
-1. **Hero** — Logo (favicon, if provided) → Headline → Subheadline → VSL Video Placeholder → CTA Button → Calendly Embed
+1. **Hero** — Logo (favicon, if provided) → Headline → Subheadline → VSL Video Placeholder → CTA Button → Embed (Calendly for Book a Call CTA, or Application Form for Apply CTA)
 2. **Problem** — Agitate pain points with specifics
 3. **Solution/System** — Introduce the mechanism (not features)
 4. **Proof** — Case studies with hard numbers
@@ -88,3 +88,86 @@ This section is NOT included for non-financial verticals (coaches, SaaS, agencie
 - Breakpoints: 768px (tablet), 480px (mobile)
 - Thumb-friendly tap targets (min 44px)
 - Calendly embed maintains min-width: 320px on mobile
+
+---
+
+## Funnel Types
+
+Every partner funnel uses one of two CTA types. **Always ask the client which type during onboarding.**
+
+### Book a Call CTA
+- Calendly embed sits on the **main landing page** (in the hero section)
+- All CTA buttons scroll to the Calendly embed
+- Flow: **Landing Page → `/callconfirmed`**
+
+### Apply CTA
+- Application form (e.g., Typeform) sits on the **main landing page** where the Calendly embed would normally go
+- All CTA buttons scroll to the application form embed
+- After submission, the applicant is redirected to `/bookacall` where the Calendly embed lives
+- Flow: **Landing Page → `/bookacall` → `/callconfirmed`**
+- The `/bookacall` page is minimal: confirmation badge, headline, subtext, Calendly embed, footer
+
+---
+
+## Standard Pages (Every Partner)
+
+| URL | File | Purpose |
+|---|---|---|
+| `/` | `index.html` | Main landing page |
+| `/privacypolicy` | `privacypolicy.html` | Privacy policy (legally required) |
+| `/termsofservice` | `termsofservice.html` | Terms of service (legally required) |
+| `/callconfirmed` | `callconfirmed.html` | Post-booking confirmation (show rate optimization) |
+| `/bookacall` | `bookacall.html` | Calendly booking page (**Apply CTA funnels only**) |
+
+---
+
+## URL Conventions
+
+- **No hyphens**: `/privacypolicy` not `/privacy-policy`
+- **All lowercase**: `/callconfirmed` not `/CallConfirmed`
+- **No trailing slashes**
+- Files are named to match their URL path (e.g., `privacypolicy.html` serves at `/privacypolicy`)
+
+---
+
+## Footer Links (Standard)
+
+Every page in the funnel must include these footer links:
+
+- `/privacypolicy` — Privacy Policy
+- `/termsofservice` — Terms of Service
+- `mailto:[partner-email]` — Contact
+
+Plus the partner's physical address and phone number.
+
+---
+
+## Deployment Pattern (Per-Partner Vercel Project)
+
+Each partner's `funnels/` folder deploys as its own Vercel project:
+
+```
+partners/[partner]/funnels/
+  index.html            ← main landing page (serves at /)
+  bookacall.html        ← Calendly booking (Apply CTA funnels only)
+  callconfirmed.html    ← post-booking confirmation
+  privacypolicy.html    ← privacy policy
+  termsofservice.html   ← terms of service
+  vercel.json           ← { "cleanUrls": true }
+```
+
+**`vercel.json`** — required in every partner's `funnels/` folder:
+```json
+{
+  "cleanUrls": true
+}
+```
+
+This strips `.html` extensions automatically so `privacypolicy.html` serves at `/privacypolicy`.
+
+**Deploy command:**
+```bash
+cd partners/[partner]/funnels && vercel --prod
+```
+
+Then attach the custom domain (e.g., `partnerdomain.com`) to that Vercel project via the Vercel dashboard.

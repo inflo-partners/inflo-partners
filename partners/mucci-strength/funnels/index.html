@@ -314,13 +314,6 @@
       max-width: 480px;
     }
 
-    /* ─── CALENDLY ──────────────────────────────────────── */
-    .calendly-wrap {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
     /* ─── PROBLEM SECTION ──────────────────────────────── */
     .problem {
       background: #0d0d0d;
@@ -882,20 +875,16 @@
 
       <!-- CTA Button -->
       <div class="fade-load delay-4">
-        <a href="#calendly-section" class="btn">Book Your Free Assessment Call</a>
-        <span class="cta-subtext">No obligation. We'll assess your situation and tell you honestly if we can help.</span>
+        <a href="#apply-section" class="btn">Apply Now</a>
+        <span class="cta-subtext">Takes 2 minutes. We review every application personally.</span>
       </div>
 
     </div>
 
-    <!-- Calendly Embed — ONE embed, no wrapper, clean on page -->
-    <div style="margin-top: 64px;">
-      <div class="calendly-wrap">
-        <!-- Calendly inline widget begin -->
-        <div id="calendly-section" class="calendly-inline-widget" data-url="https://calendly.com/inflopartners/call?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        <!-- Calendly inline widget end -->
-      </div>
+    <!-- Typeform Application Embed -->
+    <div id="apply-section" style="margin-top: 64px;">
+      <div data-tf-live="01KJR11YXZ1G5Q3Z5XQD22EFJJ"></div>
+      <script src="//embed.typeform.com/next/embed.js"></script>
     </div>
 
   </section>
@@ -1020,7 +1009,7 @@
       <hr class="divider fade-scroll" style="margin-bottom: 52px;" />
 
       <div class="fade-scroll">
-        <a href="#calendly-section" class="btn">Book Your Free Assessment Call</a>
+        <a href="#apply-section" class="btn">Apply Now</a>
         <span class="cta-subtext">Application-based. We take fewer than 20 clients across both coaches combined.</span>
       </div>
 
@@ -1095,7 +1084,7 @@
             <li>Direct communication access throughout</li>
             <li>Ongoing assessments and programming adjustments</li>
           </ul>
-          <a href="#calendly-section" class="btn">Apply Now</a>
+          <a href="#apply-section" class="btn">Apply Now</a>
         </div>
 
         <div class="offer-card offer-card--featured fade-scroll">
@@ -1110,7 +1099,7 @@
             <li>Consistent schedule, community structure</li>
             <li>Best entry point into the system for local athletes</li>
           </ul>
-          <a href="#calendly-section" class="btn">Book a Call</a>
+          <a href="#apply-section" class="btn">Apply Now</a>
         </div>
 
         <div class="offer-card fade-scroll">
@@ -1124,7 +1113,7 @@
             <li>Reserved for athletes with specific, complex cases</li>
             <li>In-person at Little Ferry, NJ gym location</li>
           </ul>
-          <a href="#calendly-section" class="btn">Book a Call</a>
+          <a href="#apply-section" class="btn">Apply Now</a>
         </div>
 
       </div>
@@ -1252,11 +1241,11 @@
         </div>
 
         <p class="final-cta__body">
-          Mucci Strength works with athletes who are doing everything right — except the structural foundation they were never taught. If you're serious about fixing the root cause instead of managing symptoms, the next step is a free 30-minute assessment call. We'll look at your situation honestly and tell you exactly whether we can help.
+          Mucci Strength works with athletes who are doing everything right, except the structural foundation they were never taught. If you're serious about fixing the root cause instead of managing symptoms, apply below. It takes 2 minutes. We review every application and reach out if it's a fit.
         </p>
 
-        <a href="#calendly-section" class="btn">Book Your Free Assessment Call</a>
-        <p class="risk-note">No obligation. No pitch. If we're not the right fit, we'll tell you.</p>
+        <a href="#apply-section" class="btn">Apply Now</a>
+        <p class="risk-note">Apply below. We review every application and reach out if it's a fit.</p>
       </div>
 
     </div>
@@ -1271,9 +1260,9 @@
     />
 
     <div class="footer__links">
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/terms">Terms of Service</a>
-      <a href="mailto:info@muccis trength.com">Contact</a>
+      <a href="/privacypolicy">Privacy Policy</a>
+      <a href="/termsofservice">Terms of Service</a>
+      <a href="mailto:info@muccistrength.com">Contact</a>
     </div>
 
     <p class="footer__address">215 Gates Rd, Little Ferry, NJ, Suite P &nbsp;|&nbsp; +1 (201) 401-4380</p>
@@ -1328,11 +1317,11 @@
 
     // Smooth scroll offset for CTA buttons
     (function () {
-      var links = document.querySelectorAll('a[href="#calendly-section"]');
+      var links = document.querySelectorAll('a[href="#apply-section"]');
       links.forEach(function (link) {
         link.addEventListener('click', function (e) {
           e.preventDefault();
-          var target = document.getElementById('calendly-section');
+          var target = document.getElementById('apply-section');
           if (target) {
             var offset = 40;
             var top = target.getBoundingClientRect().top + window.pageYOffset - offset;

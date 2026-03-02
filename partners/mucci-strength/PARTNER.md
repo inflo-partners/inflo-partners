@@ -204,7 +204,8 @@ The business exists to offer an opportunity, not a mandate, for individuals to i
 ## Booking & CTA
 
 - **Booking URL:** https://calendly.com/inflopartners/call
-- **CTA Type:** Book a Call
+- **CTA Type:** Apply
+- **Application Form:** Typeform (ID: 01KJR11YXZ1G5Q3Z5XQD22EFJJ)
 
 ---
 

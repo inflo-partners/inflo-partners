@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Call — Mucci Strength</title>
+  <link rel="icon" href="https://storage.tally.so/private/IMG_5400.jpeg?id=jJdWWE&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImpKZFdXRSIsImZvcm1JZCI6Imphb0IxUSIsImlhdCI6MTc3MTg1MTI5Mn0.PZJImY869RZKbWadxRnwaubRSu8VyqO-Z9Ne3s_pT-I&signature=4318e7e8495615fb49d2128b220b0fcb63fc00e2de0fbfd4e668181e27898936" type="image/jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","mucci-strength");
+  </script>
+
+  <style>
+    /* ─── CSS VARIABLES ─────────────────────────────────── */
+    :root {
+      --bg: #0a0a0a;
+      --text: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.60);
+      --gold: #D4AF37;
+      --gold-hover: #e0c04a;
+      --gold-subtle: rgba(212, 175, 55, 0.15);
+      --gold-border: rgba(212, 175, 55, 0.20);
+      --card-bg: #111118;
+      --card-border: rgba(255, 255, 255, 0.06);
+    }
+
+    /* ─── RESET & BASE ──────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--gold-hover);
+    }
+
+    /* ─── FADE-IN ANIMATIONS ────────────────────────────── */
+    @keyframes fadeInFromTop {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Staggered load animations for above-the-fold content */
+    .anim-1 { animation: fadeInFromTop 0.7s ease-out 0.1s both; }
+    .anim-2 { animation: fadeInFromTop 0.7s ease-out 0.25s both; }
+    .anim-3 { animation: fadeInFromTop 0.7s ease-out 0.4s both; }
+    .anim-4 { animation: fadeInFromTop 0.7s ease-out 0.55s both; }
+
+    /* Scroll-triggered fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── LAYOUT ─────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── HEADER ─────────────────────────────────────────── */
+    .site-header {
+      padding: 28px 24px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .site-header .logo {
+      height: 44px;
+      width: auto;
+    }
+
+    /* ─── MAIN CONTENT ───────────────────────────────────── */
+    .main-content {
+      padding: 48px 0 0;
+    }
+
+    /* Confirmation badge */
+    .confirmation-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-subtle);
+      border: 1px solid var(--gold-border);
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+      margin-bottom: 28px;
+    }
+
+    .confirmation-badge .check-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      background: var(--gold);
+      border-radius: 50%;
+      color: #0a0a0a;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Headline */
+    .page-headline {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    /* Subtext */
+    .page-subtext {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 520px;
+      margin: 0 auto 52px;
+    }
+
+    /* ─── CALENDLY EMBED ─────────────────────────────────── */
+    .calendly-wrapper {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .calendly-wrapper .calendly-inline-widget {
+      width: 100%;
+    }
+
+    /* ─── DIVIDER ─────────────────────────────────────────── */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold-border);
+      margin: 0 auto 48px;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    .site-footer {
+      padding: 48px 24px 40px;
+      border-top: 1px solid var(--card-border);
+      margin-top: 0;
+    }
+
+    .footer-logo {
+      height: 36px;
+      width: auto;
+      margin: 0 auto 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-links .separator {
+      color: var(--card-border);
+      font-size: 13px;
+    }
+
+    .footer-address {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-copyright {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.30);
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .site-header {
+        padding: 22px 20px 0;
+      }
+
+      .main-content {
+        padding: 36px 0 0;
+      }
+
+      .page-headline {
+        font-size: clamp(24px, 7vw, 32px);
+      }
+
+      .page-subtext {
+        font-size: 16px;
+        margin-bottom: 40px;
+      }
+
+      .calendly-wrapper {
+        padding: 0 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-header {
+        padding: 18px 16px 0;
+      }
+
+      .confirmation-badge {
+        font-size: 12px;
+        padding: 5px 14px;
+      }
+
+      .page-headline {
+        font-size: 26px;
+      }
+
+      .page-subtext {
+        font-size: 15px;
+      }
+
+      .footer-links {
+        gap: 6px;
+      }
+
+      .footer-links a {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ──────────────────────────────────────────── -->
+  <header class="site-header">
+    <img
+      src="https://storage.tally.so/private/IMG_5400.jpeg?id=jJdWWE&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImpKZFdXRSIsImZvcm1JZCI6Imphb0IxUSIsImlhdCI6MTc3MTg1MTI5Mn0.PZJImY869RZKbWadxRnwaubRSu8VyqO-Z9Ne3s_pT-I&signature=4318e7e8495615fb49d2128b220b0fcb63fc00e2de0fbfd4e668181e27898936"
+      alt="Mucci Strength"
+      class="logo anim-1"
+    />
+  </header>
+
+  <!-- ─── MAIN CONTENT ─────────────────────────────────────── -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Confirmation badge -->
+      <div class="confirmation-badge anim-2">
+        <span class="check-icon">&#10003;</span>
+        Application Received
+      </div>
+
+      <!-- Headline -->
+      <h1 class="page-headline anim-3">
+        You're Almost In — Book Your Call
+      </h1>
+
+      <!-- Subtext -->
+      <p class="page-subtext anim-4">
+        We've received your application. The next step is a quick call to make sure we're the right fit. Pick a time below.
+      </p>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="divider fade-in"></div>
+
+    <!-- Calendly embed — no wrapper box, clean page flow -->
+    <div class="calendly-wrapper">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/inflopartners/call?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+
+  </main>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer class="site-footer fade-in">
+    <img
+      src="https://storage.tally.so/private/IMG_5400.jpeg?id=jJdWWE&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImpKZFdXRSIsImZvcm1JZCI6Imphb0IxUSIsImlhdCI6MTc3MTg1MTI5Mn0.PZJImY869RZKbWadxRnwaubRSu8VyqO-Z9Ne3s_pT-I&signature=4318e7e8495615fb49d2128b220b0fcb63fc00e2de0fbfd4e668181e27898936"
+      alt="Mucci Strength"
+      class="footer-logo"
+    />
+
+    <nav class="footer-links">
+      <a href="/privacypolicy">Privacy Policy</a>
+      <span class="separator">|</span>
+      <a href="/termsofservice">Terms of Service</a>
+      <span class="separator">|</span>
+      <a href="mailto:info@muccistrength.com">Contact</a>
+    </nav>
+
+    <p class="footer-address">
+      215 Gates Rd, Little Ferry, NJ, Suite P &nbsp;|&nbsp; +1 (201) 401-4380
+    </p>
+
+    <p class="footer-copyright">
+      &copy; 2026 Mucci Strength LLC. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- ─── SCROLL-TRIGGERED FADE-INS ────────────────────────── -->
+  <script>
+    (function () {
+      const targets = document.querySelectorAll('.fade-in');
+
+      if (!targets.length) return;
+
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      targets.forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>
