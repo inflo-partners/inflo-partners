@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're Booked — Club Kaya</title>
+  <link rel="icon" href="images/5e147e16.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "von9vvh1ff");
+  </script>
+
+  <style>
+    /* ---- Reset & Base ---- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      background-color: #0a0f1a;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      background-color: #0a0f1a;
+      color: #ffffff;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
+
+    /* Premium texture overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at top, rgba(15, 170, 140, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ---- CSS Variables ---- */
+    :root {
+      --bg: #0a0f1a;
+      --card-bg: #0f1525;
+      --border: #1e2a42;
+      --teal-start: #0faa8c;
+      --teal-mid: #14d4ad;
+      --teal-end: #0d9980;
+      --text-muted: rgba(255,255,255,0.65);
+      --radius: 1rem;
+    }
+
+    /* ---- Layout Utilities ---- */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .container-sm  { max-width: 720px;  margin: 0 auto; padding: 0 1.5rem; }
+    .container-md  { max-width: 900px;  margin: 0 auto; padding: 0 1.5rem; }
+    .text-center { text-align: center; }
+    section, header, footer { position: relative; z-index: 1; }
+
+    /* ---- Typography ---- */
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+    h1 { font-size: clamp(1.75rem, 5vw, 3.25rem); }
+    h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+    h3 { font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
+
+    p { line-height: 1.65; font-weight: 300; }
+
+    /* ---- Gradient Text ---- */
+    .text-gradient {
+      background: linear-gradient(135deg, #0faa8c 0%, #14d4ad 50%, #0faa8c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 20px rgba(15, 170, 140, 0.3));
+    }
+
+    /* ---- Cards ---- */
+    .glass-card {
+      background: linear-gradient(180deg, rgba(30,40,65,0.95) 0%, rgba(20,28,52,0.98) 100%);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+    }
+    .premium-border {
+      border: 1px solid rgba(15, 170, 140, 0.25) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .premium-shadow {
+      box-shadow:
+        0 4px 6px -1px rgba(0,0,0,0.3),
+        0 25px 50px -12px rgba(15, 170, 140, 0.15),
+        0 0 0 1px rgba(15, 170, 140, 0.1);
+    }
+
+    /* ---- Button ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #0faa8c 0%, #0d9980 100%);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 1rem 2.5rem;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(15, 170, 140, 0.3);
+      white-space: nowrap;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(15, 170, 140, 0.4), 0 0 40px rgba(15, 170, 140, 0.2);
+    }
+    .btn:active { transform: translateY(-1px); }
+
+    /* ---- Gradient Backgrounds ---- */
+    .bg-gradient-teal {
+      background: linear-gradient(135deg, #0faa8c 0%, #0d9980 100%);
+    }
+    .bg-gradient-premium {
+      background: linear-gradient(180deg, rgba(15,20,38,0.5) 0%, rgba(8,12,28,1) 100%);
+    }
+
+    /* ---- Animations ---- */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulseSoft {
+      0%, 100% { box-shadow: 0 4px 15px rgba(15, 170, 140, 0.3); }
+      50%       { box-shadow: 0 4px 25px rgba(15, 170, 140, 0.5); }
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .anim-0  { animation: fadeInUp 0.6s ease-out 0s    both; }
+    .anim-1  { animation: fadeInUp 0.6s ease-out 0.1s  both; }
+    .anim-2  { animation: fadeInUp 0.6s ease-out 0.2s  both; }
+    .anim-3  { animation: fadeInUp 0.6s ease-out 0.3s  both; }
+    .anim-4  { animation: fadeInUp 0.6s ease-out 0.4s  both; }
+    .anim-5  { animation: fadeInUp 0.6s ease-out 0.5s  both; }
+
+    /* Scroll-triggered fade-in */
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .scroll-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- HEADER ---- */
+    header {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .header-logo {
+      height: 2.75rem;
+      width: auto;
+    }
+    .header-brand {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    /* ---- SUCCESS SECTION ---- */
+    .success-section {
+      padding: 2rem 1.5rem 3.5rem;
+    }
+    .success-icon-wrap {
+      width: 5.5rem;
+      height: 5.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.75rem;
+    }
+    .success-icon-wrap svg {
+      width: 2.75rem;
+      height: 2.75rem;
+      color: #ffffff;
+    }
+
+    /* ---- VIDEO (16:9) ---- */
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 0.875rem;
+      overflow: hidden;
+      background: #0f1525;
+    }
+    .video-wrap iframe,
+    .video-wrap wistia-player {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-wrap wistia-player {
+      display: block;
+    }
+
+    /* Wistia swatch blur placeholder */
+    .wistia-swatch-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0f1525;
+      z-index: 2;
+      border-radius: 0.875rem;
+      transition: opacity 0.4s ease;
+    }
+    .wistia-swatch-placeholder .spinner {
+      width: 3rem;
+      height: 3rem;
+      border: 2px solid #0faa8c;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    /* ---- NEXT STEPS CARD ---- */
+    .steps-card {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      border-radius: 1.25rem;
+    }
+    .steps-list { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 0.5rem; }
+    .step-item  { display: flex; align-items: flex-start; gap: 1.25rem; }
+    .step-num {
+      flex-shrink: 0;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #ffffff;
+    }
+    .step-title { font-weight: 600; font-size: 1.05rem; color: #ffffff; margin-bottom: 0.25rem; }
+    .step-desc  { font-size: 0.9rem; line-height: 1.6; color: rgba(255,255,255,0.7); font-weight: 300; }
+
+    /* ---- SECTION HEADERS ---- */
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #0faa8c;
+      margin-bottom: 0.75rem;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 300;
+      max-width: 560px;
+      margin: 0.75rem auto 0;
+    }
+
+    /* ---- VIDEO TESTIMONIALS GRID ---- */
+    .testimonials-section {
+      padding: 4rem 1.5rem 5rem;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .testimonial-card { display: flex; flex-direction: column; }
+
+    /* Vertical video (9:16) */
+    .video-wrap-vertical {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+      padding-top: min(177.78%, calc(280px * 1.7778));
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #0f1525;
+      border: 1px solid rgba(15, 170, 140, 0.25);
+    }
+    .video-wrap-vertical wistia-player {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .video-wrap-vertical .wistia-swatch-placeholder {
+      border-radius: 1rem;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #ffffff;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .testimonial-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      line-height: 1.55;
+      margin-top: 0.375rem;
+      font-weight: 300;
+    }
+
+    /* ---- FAQ ---- */
+    .faq-section { padding: 4rem 1.5rem 5rem; }
+    .faq-list { display: flex; flex-direction: column; gap: 0.875rem; margin-top: 2.5rem; }
+    .faq-item {
+      border-radius: 0.875rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(30,40,65,0.95) 0%, rgba(20,28,52,0.98) 100%);
+    }
+    .faq-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: inherit;
+    }
+    .faq-question { font-weight: 600; font-size: 1rem; flex: 1; padding-right: 1rem; }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      color: #0faa8c;
+      transition: transform 0.2s ease;
+    }
+    .faq-trigger[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
+    .faq-body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.25s ease-out;
+    }
+    .faq-body.open { max-height: 30rem; }
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.7);
+      font-weight: 300;
+    }
+
+    /* ---- CLUB KAYA FEATURES ---- */
+    .features-section { padding: 4rem 1.5rem 5rem; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .feature-card {
+      background: linear-gradient(180deg, rgba(30,40,65,0.95) 0%, rgba(20,28,52,0.98) 100%);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.125rem;
+      padding: 1.5rem;
+    }
+    .feature-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .feature-icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: #ffffff;
+    }
+    .feature-title { font-weight: 700; font-size: 1rem; color: #ffffff; margin-bottom: 0.5rem; }
+    .feature-desc  { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.55; font-weight: 300; }
+
+    .features-cta-box {
+      margin-top: 3rem;
+      background: linear-gradient(180deg, rgba(30,40,65,0.95) 0%, rgba(20,28,52,0.98) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .features-cta-box h3 { margin-bottom: 1.25rem; }
+    .check-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem 2rem;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+    }
+    .check-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: #0faa8c;
+      flex-shrink: 0;
+    }
+
+    /* ---- REAL RESULTS ---- */
+    .results-section { padding: 4rem 1.5rem 5rem; }
+    .results-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 600px;
+      margin: 2.5rem auto 0;
+    }
+    .results-stack img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.75rem;
+      display: block;
+    }
+    .results-cta-box {
+      max-width: 600px;
+      margin: 3rem auto 0;
+      background: linear-gradient(180deg, rgba(30,40,65,0.95) 0%, rgba(20,28,52,0.98) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      text-align: center;
+    }
+    .results-cta-box p { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff; }
+    .results-cta-box .sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); font-weight: 300; margin-bottom: 1.5rem; }
+
+    /* ---- YOUTUBE SECTIONS ---- */
+    .yt-section { padding: 4rem 1.5rem 5rem; }
+
+    /* ---- FOOTER ---- */
+    footer {
+      border-top: 1px solid rgba(30,42,66,0.8);
+      background: rgba(10,15,26,0.5);
+      backdrop-filter: blur(8px);
+      padding: 2rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .footer-brand img { height: 2.25rem; width: auto; }
+    .footer-brand span { font-weight: 600; font-size: 0.95rem; }
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-nav a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: #ffffff; }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-card { padding: 1.75rem 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .btn { width: 100%; font-size: 0.95rem; }
+      .check-list { flex-direction: column; align-items: center; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="anim-0">
+    <div class="header-inner">
+      <img src="images/5e147e16.png" alt="Club Kaya" class="header-logo" />
+      <span class="header-brand">Club Kaya</span>
+    </div>
+  </header>
+
+  <!-- ===== SUCCESS SECTION ===== -->
+  <section class="success-section">
+    <div class="container-md text-center">
+
+      <!-- Check circle -->
+      <div class="success-icon-wrap bg-gradient-teal premium-shadow anim-1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="anim-2">
+        You're In! <span class="text-gradient">Watch The Video Below</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="anim-3" style="font-size:1.1rem; color:rgba(255,255,255,0.75); max-width:560px; margin:1rem auto 2.5rem;">
+        This short video covers exactly what to expect on your call and how to prepare for maximum results.
+      </p>
+
+      <!-- Wistia confirmation video -->
+      <div class="anim-4" style="max-width:860px; margin:0 auto 3rem;" id="main-video-wrap">
+        <div class="video-wrap premium-shadow" id="main-video-container">
+          <div class="wistia-swatch-placeholder" id="main-video-swatch">
+            <div class="spinner"></div>
+          </div>
+          <wistia-player media-id="cn7q62pyv9" aspect="1.7777777777777777"></wistia-player>
+        </div>
+      </div>
+
+      <!-- Next Steps Card -->
+      <div class="glass-card premium-border premium-shadow steps-card anim-5">
+        <h2 style="text-align:center; margin-bottom:1.75rem;">
+          What Happens <span class="text-gradient">Next</span>
+        </h2>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-num bg-gradient-teal premium-shadow">1</div>
+            <div>
+              <p class="step-title">Check Your Email</p>
+              <p class="step-desc">You'll receive a calendar invite with all the call details and a link to join.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num bg-gradient-teal premium-shadow">2</div>
+            <div>
+              <p class="step-title">Confirm Your Spot</p>
+              <p class="step-desc">Hit 'Yes' on the calendar invite to confirm your call is locked in.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num bg-gradient-teal premium-shadow">3</div>
+            <div>
+              <p class="step-title">Prepare Your Questions</p>
+              <p class="step-desc">Think about your health goals, current challenges, and what's held you back before.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num bg-gradient-teal premium-shadow">4</div>
+            <div>
+              <p class="step-title">Show Up Ready</p>
+              <p class="step-desc">Be in a quiet space with stable internet. This call could change your life.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== VIDEO TESTIMONIALS ===== -->
+  <section class="testimonials-section bg-gradient-premium">
+    <div class="container">
+      <div class="text-center scroll-fade" style="margin-bottom:0;">
+        <h2>Real <span class="text-gradient">Transformations</span></h2>
+        <p class="section-subtitle">Hear from members who have transformed their energy, focus, and physique with Club Kaya</p>
+      </div>
+
+      <div class="testimonials-grid" id="testimonials-grid">
+
+        <!-- Addison -->
+        <div class="testimonial-card scroll-fade" style="transition-delay:0ms;">
+          <div class="video-wrap-vertical" id="wrap-9vt8idzdgl">
+            <div class="wistia-swatch-placeholder" id="swatch-9vt8idzdgl"><div class="spinner"></div></div>
+            <wistia-player media-id="9vt8idzdgl" aspect="0.5625"></wistia-player>
+          </div>
+          <p class="testimonial-name">Addison</p>
+          <p class="testimonial-desc">Dropped 32 lbs in just 90 days while jet-setting across the globe — proof that travel is no excuse</p>
+        </div>
+
+        <!-- Vivas -->
+        <div class="testimonial-card scroll-fade" style="transition-delay:80ms;">
+          <div class="video-wrap-vertical" id="wrap-j2vkcomw71">
+            <div class="wistia-swatch-placeholder" id="swatch-j2vkcomw71"><div class="spinner"></div></div>
+            <wistia-player media-id="j2vkcomw71" aspect="0.5625"></wistia-player>
+          </div>
+          <p class="testimonial-name">Vivas</p>
+          <p class="testimonial-desc">Lost weight and built lean muscle while staying 100% vegetarian — no compromise on his values or results</p>
+        </div>
+
+        <!-- Clara -->
+        <div class="testimonial-card scroll-fade" style="transition-delay:160ms;">
+          <div class="video-wrap-vertical" id="wrap-k8os21udgx">
+            <div class="wistia-swatch-placeholder" id="swatch-k8os21udgx"><div class="spinner"></div></div>
+            <wistia-player media-id="k8os21udgx" aspect="0.5625"></wistia-player>
+          </div>
+          <p class="testimonial-name">Clara</p>
+          <p class="testimonial-desc">Elevated her Olympic weightlifting game with precision strength programming and peaked at competition time</p>
+        </div>
+
+        <!-- Anthony -->
+        <div class="testimonial-card scroll-fade" style="transition-delay:0ms;">
+          <div class="video-wrap-vertical" id="wrap-o96b8pnjgq">
+            <div class="wistia-swatch-placeholder" id="swatch-o96b8pnjgq"><div class="spinner"></div></div>
+            <wistia-player media-id="o96b8pnjgq" aspect="0.5625"></wistia-player>
+          </div>
+          <p class="testimonial-name">Anthony</p>
+          <p class="testimonial-desc">Cut the alcohol, dropped the weight, and got his energy back — a complete lifestyle transformation</p>
+        </div>
+
+        <!-- Daniel -->
+        <div class="testimonial-card scroll-fade" style="transition-delay:80ms;">
+          <div class="video-wrap-vertical" id="wrap-h8oz4aidab">
+            <div class="wistia-swatch-placeholder" id="swatch-h8oz4aidab"><div class="spinner"></div></div>
+            <wistia-player media-id="h8oz4aidab" aspect="0.5625"></wistia-player>
+          </div>
+          <p class="testimonial-name">Daniel</p>
+          <p class="testimonial-desc">Dialed in his nutrition for long-term longevity — building a body that performs for decades, not just months</p>
+        </div>
+
+        <!-- Klaudia -->
+        <div class="testimonial-card scroll-fade" style="transition-delay:160ms;">
+          <div class="video-wrap-vertical" id="wrap-qnnbas85u7">
+            <div class="wistia-swatch-placeholder" id="swatch-qnnbas85u7"><div class="spinner"></div></div>
+            <wistia-player media-id="qnnbas85u7" aspect="0.5625"></wistia-player>
+          </div>
+          <p class="testimonial-name">Klaudia</p>
+          <p class="testimonial-desc">Shed 20 lbs in 90 days and unlocked all-day energy to keep up with her busy schedule</p>
+        </div>
+
+        <!-- Paul -->
+        <div class="testimonial-card scroll-fade" style="transition-delay:0ms;">
+          <div class="video-wrap-vertical" id="wrap-97ypzvlai2">
+            <div class="wistia-swatch-placeholder" id="swatch-97ypzvlai2"><div class="spinner"></div></div>
+            <wistia-player media-id="97ypzvlai2" aspect="0.5625"></wistia-player>
+          </div>
+          <p class="testimonial-name">Paul</p>
+          <p class="testimonial-desc">Transformed his daily energy and mental clarity — no more afternoon crashes, just laser focus all day</p>
+        </div>
+
+        <!-- Kevin -->
+        <div class="testimonial-card scroll-fade" style="transition-delay:80ms;">
+          <div class="video-wrap-vertical" id="wrap-vp1805skme">
+            <div class="wistia-swatch-placeholder" id="swatch-vp1805skme"><div class="spinner"></div></div>
+            <wistia-player media-id="vp1805skme" aspect="0.5625"></wistia-player>
+          </div>
+          <p class="testimonial-name">Kevin</p>
+          <p class="testimonial-desc">Made it work with the equipment he had — and now everyone's asking what his secret is</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ SECTION ===== -->
+  <section class="faq-section">
+    <div class="container-sm">
+      <div class="text-center scroll-fade">
+        <h2>Frequently Asked <span class="text-gradient">Questions</span></h2>
+        <p class="section-subtitle">Everything you need to know before getting on your call</p>
+      </div>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span class="faq-question">Is this 1:1 coaching or a group program?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">This is 100% personalized 1:1 coaching directly with Mitchell. No one else. You'll work one-on-one with an Olympic athlete and Harvard graduate who will tailor every aspect of your program to your specific needs, schedule, and goals.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span class="faq-question">Is this a course?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">No, this is not a course. This is fully personalized 1:1 coaching specific to your needs. Unlike generic courses, everything is customized to your body, lifestyle, and goals.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span class="faq-question">What's included in the program?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Inside the program you'll receive a custom workout plan designed for your goals and schedule, a personalized nutrition guide, an optimized supplement and sleep stack, as well as access to longevity doctors if you're really committed to taking your health to the next level.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span class="faq-question">How long is the program?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">The program starts with a 90-day reset which forms the foundation for your transformation. This is the minimum time needed to create lasting change. We also have options to extend after the initial 90 days for those who want continued support and optimization.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span class="faq-question">How long is the optimization call?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">The optimization call is 30-45 minutes. During this time, your Head Success Coach will assess your current situation, understand your goals, and determine if the program is a good fit for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span class="faq-question">Is this right for busy professionals?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Absolutely. The program is designed specifically for high-performers with demanding schedules. Mitchell works with executives, entrepreneurs, and professionals who need efficient, sustainable systems that fit their lifestyle.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-trigger" aria-expanded="false" onclick="toggleFaq(this)">
+            <span class="faq-question">Can I do this while travelling?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">
+            <p class="faq-answer">Yes — that's the entire idea! I travel constantly for the Olympics, so I've built this program to work anywhere in the world. You'll have mobile app access to track everything on-the-go, and the systems are designed to be flexible whether you're at home, in a hotel gym, or on the road.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT'S INSIDE CLUB KAYA ===== -->
+  <section class="features-section bg-gradient-premium">
+    <div class="container">
+      <div class="text-center scroll-fade">
+        <h2>What's Inside <span class="text-gradient">Club Kaya</span></h2>
+        <p class="section-subtitle">A complete holistic health transformation system designed for busy professionals who want sustainable results without sacrificing their lifestyle</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card scroll-fade" style="transition-delay:0ms;">
+          <div class="feature-icon bg-gradient-teal">
+            <!-- Dumbbell -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 5v14M18 5v14M2 9h4M18 9h4M2 15h4M18 15h4M6 9h12M6 15h12"/>
+            </svg>
+          </div>
+          <p class="feature-title">Personalized Training Programs</p>
+          <p class="feature-desc">Custom workout plans tailored to your goals, schedule, and available equipment</p>
+        </div>
+
+        <div class="feature-card scroll-fade" style="transition-delay:100ms;">
+          <div class="feature-icon bg-gradient-teal">
+            <!-- Utensils / fork & knife -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+            </svg>
+          </div>
+          <p class="feature-title">Nutrition Coaching</p>
+          <p class="feature-desc">Macro-optimized meal plans and food strategies for sustainable fat loss</p>
+        </div>
+
+        <div class="feature-card scroll-fade" style="transition-delay:200ms;">
+          <div class="feature-icon bg-gradient-teal">
+            <!-- Brain -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.061-4.677A3 3 0 0 1 5 12.5a3 3 0 0 1 .405-1.5A2.5 2.5 0 0 1 7 6.5a2.5 2.5 0 0 1 2.5-4.5z"/>
+              <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.061-4.677A3 3 0 0 0 19 12.5a3 3 0 0 0-.405-1.5A2.5 2.5 0 0 0 17 6.5a2.5 2.5 0 0 0-2.5-4.5z"/>
+            </svg>
+          </div>
+          <p class="feature-title">Mindset &amp; Mental Performance</p>
+          <p class="feature-desc">Stress management, focus optimization, and peak mental clarity protocols</p>
+        </div>
+
+        <div class="feature-card scroll-fade" style="transition-delay:300ms;">
+          <div class="feature-icon bg-gradient-teal">
+            <!-- Moon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
+            </svg>
+          </div>
+          <p class="feature-title">Sleep &amp; Recovery Optimization</p>
+          <p class="feature-desc">Science-backed sleep protocols to maximize recovery and energy</p>
+        </div>
+
+        <div class="feature-card scroll-fade" style="transition-delay:0ms;">
+          <div class="feature-icon bg-gradient-teal">
+            <!-- Flame -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/>
+            </svg>
+          </div>
+          <p class="feature-title">Metabolic Health Protocols</p>
+          <p class="feature-desc">Hormone optimization, inflammation reduction, and longevity strategies</p>
+        </div>
+
+        <div class="feature-card scroll-fade" style="transition-delay:100ms;">
+          <div class="feature-icon bg-gradient-teal">
+            <!-- Calendar -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <p class="feature-title">Weekly 1-on-1 Coaching Calls</p>
+          <p class="feature-desc">Direct access to personalized guidance and accountability check-ins</p>
+        </div>
+
+        <div class="feature-card scroll-fade" style="transition-delay:200ms;">
+          <div class="feature-icon bg-gradient-teal">
+            <!-- MessageCircle -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <p class="feature-title">24/7 Text &amp; Voice Support</p>
+          <p class="feature-desc">Get answers when you need them with direct messaging access</p>
+        </div>
+
+        <div class="feature-card scroll-fade" style="transition-delay:300ms;">
+          <div class="feature-icon bg-gradient-teal">
+            <!-- Smartphone -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+          </div>
+          <p class="feature-title">Mobile App for Tracking</p>
+          <p class="feature-desc">Track your workouts, nutrition, and progress on-the-go — even while travelling</p>
+        </div>
+
+      </div>
+
+      <!-- Bottom highlight -->
+      <div class="features-cta-box scroll-fade">
+        <h3>Everything You Need to <span class="text-gradient">Transform Your Health</span></h3>
+        <div class="check-list">
+          <div class="check-item">
+            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>No restrictive diets</span>
+          </div>
+          <div class="check-item">
+            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>No hours at the gym</span>
+          </div>
+          <div class="check-item">
+            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Sustainable for life</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REAL RESULTS ===== -->
+  <section class="results-section">
+    <div class="container">
+      <div class="text-center scroll-fade">
+        <h2>Real <span class="text-gradient">Results</span></h2>
+        <p class="section-subtitle">See what our members have achieved with the program</p>
+      </div>
+
+      <div class="results-stack">
+        <img src="images/img-1052-720.jpg"                      alt="Client before and after — 2 kg of pure fat loss transformation" class="scroll-fade" />
+        <img src="images/testimonial-thrive-book.png"           alt="Client testimonial about radical transformation with Mitchell and the Thrive book" class="scroll-fade" />
+        <img src="images/testimonial-one-month-coaching.png"    alt="Client testimonial about one-month coaching experience and life changes" class="scroll-fade" />
+        <img src="images/testimonial-20-pounds.png"             alt="Client text showing 20 pounds weight loss" class="scroll-fade" />
+        <img src="images/testimonial-15-pounds.png"             alt="Client text showing 15 pounds weight loss" class="scroll-fade" />
+        <img src="images/testimonial-7-mile-run.jpg"            alt="Client sharing 7 mile run progress and stamina improvements" class="scroll-fade" />
+        <img src="images/testimonial-recomp.jpg"                alt="Client testimonial about body recomp and getting compliments" class="scroll-fade" />
+      </div>
+
+      <!-- Wall of Results CTA -->
+      <div class="results-cta-box scroll-fade">
+        <p>Still Want To See More Results?</p>
+        <p class="sub">Check out our complete wall of client transformations</p>
+        <a href="/wall" class="btn">
+          Check The Wall of Results
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== YOUTUBE: 1:1 CLIENT WORKOUT SESSION ===== -->
+  <section class="yt-section">
+    <div class="container-md">
+      <div class="text-center scroll-fade" style="margin-bottom:2.5rem;">
+        <h2>1:1 Client <span class="text-gradient">Workout</span> Session</h2>
+        <p class="section-subtitle">See what an in-person training session looks like with a Club Kaya member</p>
+      </div>
+      <div class="video-wrap premium-shadow scroll-fade">
+        <iframe
+          src="https://www.youtube.com/embed/nSey0-CULzg"
+          title="1:1 Client Workout Session"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== YOUTUBE: HOW I STAY DIALED WHEN I TRAVEL ===== -->
+  <section class="yt-section bg-gradient-premium">
+    <div class="container-md">
+      <div class="text-center scroll-fade" style="margin-bottom:2.5rem;">
+        <h2>How I Stay <span class="text-gradient">Dialed</span> Even When I Travel</h2>
+        <p class="section-subtitle">Watch this vlog from Costa Rica to see how I maintain peak performance on the road</p>
+      </div>
+      <div class="video-wrap premium-shadow scroll-fade">
+        <iframe
+          src="https://www.youtube.com/embed/xLWD21bAMK4?si=giRa5ziNFg4ACVCI"
+          title="How I Stay Dialed When I Travel — Costa Rica Vlog"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/5e147e16.png" alt="Club Kaya" />
+        <span>Club Kaya</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Club Kaya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== WISTIA SCRIPTS ===== -->
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script type="module" src="https://fast.wistia.com/embed/cn7q62pyv9.js" async></script>
+  <script type="module" src="https://fast.wistia.com/embed/9vt8idzdgl.js" async></script>
+  <script type="module" src="https://fast.wistia.com/embed/j2vkcomw71.js" async></script>
+  <script type="module" src="https://fast.wistia.com/embed/k8os21udgx.js" async></script>
+  <script type="module" src="https://fast.wistia.com/embed/o96b8pnjgq.js" async></script>
+  <script type="module" src="https://fast.wistia.com/embed/h8oz4aidab.js" async></script>
+  <script type="module" src="https://fast.wistia.com/embed/qnnbas85u7.js" async></script>
+  <script type="module" src="https://fast.wistia.com/embed/97ypzvlai2.js" async></script>
+  <script type="module" src="https://fast.wistia.com/embed/vp1805skme.js" async></script>
+
+  <script>
+    /* ---- FAQ accordion ---- */
+    function toggleFaq(btn) {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      // Close all
+      document.querySelectorAll('.faq-trigger').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      // Open clicked if it was closed
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
+    }
+
+    /* ---- Intersection Observer for scroll-fade ---- */
+    (function() {
+      var elements = document.querySelectorAll('.scroll-fade');
+      if (!elements.length) return;
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      elements.forEach(function(el) { observer.observe(el); });
+    })();
+
+    /* ---- Hide Wistia swatches once player fires ---- */
+    (function() {
+      var mediaIds = [
+        'cn7q62pyv9',
+        '9vt8idzdgl','j2vkcomw71','k8os21udgx','o96b8pnjgq',
+        'h8oz4aidab','qnnbas85u7','97ypzvlai2','vp1805skme'
+      ];
+
+      function hideSwatch(id) {
+        var el = document.getElementById('swatch-' + id);
+        if (el) el.style.opacity = '0';
+        // also handle main video swatch
+        var main = document.getElementById('main-video-swatch');
+        if (main && id === 'cn7q62pyv9') main.style.opacity = '0';
+      }
+
+      // Fallback: hide after a delay via MutationObserver or timeout
+      setTimeout(function() {
+        mediaIds.forEach(function(id) { hideSwatch(id); });
+      }, 2500);
+
+      // If Wistia API is available, use it
+      window._wq = window._wq || [];
+      mediaIds.forEach(function(id) {
+        window._wq.push({
+          id: id,
+          onReady: function() { hideSwatch(id); }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
