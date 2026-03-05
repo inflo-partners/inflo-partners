@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momentum Wealth Fund | Self-Storage Investment</title>
+  <meta name="description" content="Educational overview for accredited investors interested in self-storage real estate, portfolio structure, and long-term real estate fundamentals." />
+  <link rel="icon" href="/images/momentum-logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/images/momentum-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Microsoft Clarity -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vnahwkjecf");
+  </script>
+
+  <style>
+    /* ─── Reset & Variables ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2744;
+      --navy-light: #2d3d5c;
+      --gold: #b8972e;
+      --gold-light: #d4bc6a;
+      --gold-subtle: rgba(184, 151, 46, 0.15);
+      --gold-border: rgba(184, 151, 46, 0.30);
+      --bg: #ffffff;
+      --bg-secondary: #f9f8f5;
+      --text: #1a2744;
+      --text-muted: #6b7280;
+      --border: #e2e0d8;
+      --border-light: rgba(226, 224, 216, 0.5);
+      --max-w: 1200px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ─── Utilities ─── */
+    .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+    .container-sm { width: 100%; max-width: 768px; margin: 0 auto; padding: 0 20px; }
+    .container-md { width: 100%; max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    .container-lg { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .text-center { text-align: center; }
+
+    /* ─── Section Label ─── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-label .line {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-label span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ─── Section Heading ─── */
+    .section-heading {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-subtext {
+      color: var(--text-muted);
+      font-size: 14px;
+      max-width: 560px;
+      margin: 0 auto;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════════
+       1. HERO SECTION
+    ══════════════════════════════════════ */
+    .hero {
+      position: relative;
+      padding: 0 0 16px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top, rgba(26,39,68,0.03), transparent);
+      pointer-events: none;
+    }
+    .hero-logo {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0 16px;
+    }
+    .hero-logo img {
+      width: 110px;
+      height: auto;
+    }
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 16px;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 10px 24px;
+      font-size: 14px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 50px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .hero h1 .highlight {
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .hero-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .hero-sub .line {
+      width: 32px;
+      height: 1px;
+      background: var(--border);
+      display: none;
+    }
+
+    /* ══════════════════════════════════════
+       2. VIDEO SECTION
+    ══════════════════════════════════════ */
+    .video-section {
+      padding: 16px 16px;
+    }
+    .video-wrapper {
+      max-width: 768px;
+      margin: 0 auto;
+      position: relative;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+    }
+    .video-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #f0eeea, #e8e6e0, #e0ddd6);
+    }
+    .video-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .video-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 1;
+    }
+    .video-text p { font-size: 18px; font-weight: 600; color: rgba(26,39,68,0.8); }
+    .video-text small { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 500; margin-top: 6px; }
+    .play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .play-btn-inner {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(26,39,68,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .play-btn:hover .play-btn-inner {
+      transform: scale(1.05);
+      box-shadow: 0 6px 30px rgba(26,39,68,0.4);
+    }
+    .play-btn-inner svg { width: 24px; height: 24px; fill: #fff; margin-left: 3px; }
+    .video-corner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(225deg, rgba(26,39,68,0.1), transparent);
+      border-bottom-left-radius: 24px;
+    }
+
+    /* ══════════════════════════════════════
+       3. CALENDLY SECTION
+    ══════════════════════════════════════ */
+    .calendly-section {
+      padding: 24px 16px;
+    }
+    .calendly-section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    .calendly-inline-widget {
+      min-width: 320px;
+      width: 100%;
+      height: 650px;
+    }
+
+    /* ══════════════════════════════════════
+       4. PROJECTS SECTION
+    ══════════════════════════════════════ */
+    .projects-section {
+      padding: 64px 16px;
+      background: var(--bg-secondary);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .project-card {
+      border: 1px solid var(--border-light);
+      background: var(--bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      transition: box-shadow 0.3s;
+    }
+    .project-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .project-img {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-status {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255,255,255,0.95);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .project-body { padding: 20px; }
+    .project-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .project-location {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .project-location svg { width: 16px; height: 16px; color: var(--navy); flex-shrink: 0; }
+    .project-arr {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--navy);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      width: fit-content;
+    }
+    .project-arr svg { width: 14px; height: 14px; }
+    .project-arr .arr-value { font-weight: 700; font-size: 14px; }
+    .project-arr .arr-label { font-size: 12px; opacity: 0.9; }
+    .project-type {
+      display: inline-block;
+      font-size: 12px;
+      background: var(--bg-secondary);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .project-prices {
+      background: rgba(26,39,68,0.03);
+      border: 1px solid rgba(26,39,68,0.1);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .project-prices .price-col { text-align: center; }
+    .project-prices .price-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+    .project-prices .price-value { font-size: 18px; font-weight: 700; color: var(--text); }
+    .project-prices .price-value.sale { color: var(--navy); }
+    .project-prices .arrow { color: var(--navy); }
+    .project-prices .arrow svg { width: 20px; height: 20px; }
+    .project-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .stat-box {
+      background: var(--bg-secondary);
+      border-radius: 4px;
+      padding: 8px 12px;
+    }
+    .stat-box.full { grid-column: 1 / -1; }
+    .stat-box .stat-label { font-size: 12px; color: var(--text-muted); margin-bottom: 2px; }
+    .stat-box .stat-value { font-weight: 600; color: var(--text); font-size: 14px; }
+    .projects-disclaimer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════════
+       5. FAQ SECTION
+    ══════════════════════════════════════ */
+    .faq-section {
+      padding: 64px 16px;
+      background: var(--bg-secondary);
+    }
+    .faq-list { margin-top: 40px; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.02em;
+      gap: 16px;
+    }
+    .faq-question:hover { color: var(--navy); }
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      position: relative;
+      transition: transform 0.3s;
+    }
+    .faq-icon::before, .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--text-muted);
+      transition: transform 0.3s;
+    }
+    .faq-icon::before {
+      width: 14px;
+      height: 1.5px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .faq-icon::after {
+      width: 1.5px;
+      height: 14px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .faq-item.active .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      opacity: 0;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 400px;
+    }
+    .faq-answer-inner {
+      padding: 0 0 24px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+      font-size: 15px;
+    }
+
+    /* ══════════════════════════════════════
+       6. TESTIMONIALS SECTION
+    ══════════════════════════════════════ */
+    .testimonials-section {
+      padding: 64px 16px;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .testimonial-card {
+      border: 1px solid var(--border);
+      padding: 32px;
+      background: var(--bg);
+      position: relative;
+    }
+    .testimonial-quote {
+      position: absolute;
+      top: 24px;
+      left: 32px;
+      font-size: 48px;
+      color: rgba(184,151,46,0.3);
+      line-height: 1;
+      font-family: 'Inter', serif;
+    }
+    .testimonial-text {
+      color: rgba(26,39,68,0.9);
+      line-height: 1.7;
+      font-weight: 300;
+      padding-top: 24px;
+      margin-bottom: 24px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-light);
+    }
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(26,39,68,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .testimonial-avatar span {
+      color: var(--navy);
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .testimonial-name { font-weight: 500; color: var(--text); font-size: 14px; letter-spacing: 0.02em; }
+    .testimonial-role { color: var(--text-muted); font-size: 12px; letter-spacing: 0.02em; }
+
+    /* ══════════════════════════════════════
+       7. TRACK RECORD / METRICS SECTION
+    ══════════════════════════════════════ */
+    .metrics-section {
+      padding: 64px 16px 72px;
+      background: var(--navy);
+    }
+    .metrics-section .section-label span { color: rgba(255,255,255,0.7); }
+    .metrics-section .section-label .line { background: rgba(184,151,46,0.6); }
+    .metrics-section .section-heading { color: #fff; }
+    .metrics-section .section-subtext { color: rgba(255,255,255,0.7); }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .metric-item { text-align: center; }
+    .metric-value {
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .metric-divider {
+      width: 32px;
+      height: 1px;
+      background: rgba(184,151,46,0.4);
+      margin: 0 auto 12px;
+    }
+    .metric-label {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    /* ══════════════════════════════════════
+       8. FUND STRUCTURE SECTION
+    ══════════════════════════════════════ */
+    .structure-section {
+      padding: 64px 16px;
+    }
+    .structure-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .structure-card {
+      display: flex;
+      gap: 20px;
+      padding: 24px;
+      border: 1px solid var(--border-light);
+      background: rgba(249,248,245,0.5);
+    }
+    .structure-icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .structure-icon svg { width: 20px; height: 20px; color: var(--navy); stroke: var(--navy); fill: none; }
+    .structure-card h3 { font-weight: 500; color: var(--text); margin-bottom: 8px; letter-spacing: 0.02em; font-size: 15px; }
+    .structure-card p { color: var(--text-muted); font-size: 14px; line-height: 1.7; font-weight: 300; }
+    .operational-box {
+      margin-top: 40px;
+      padding: 32px;
+      border: 1px solid var(--border-light);
+      background: rgba(249,248,245,0.5);
+    }
+    .operational-box h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .operational-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .operational-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    /* ══════════════════════════════════════
+       9. MANAGERS SECTION
+    ══════════════════════════════════════ */
+    .managers-section {
+      padding: 64px 16px;
+      background: var(--bg-secondary);
+    }
+    .managers-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .managers-img {
+      width: 256px;
+      height: 256px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      flex-shrink: 0;
+    }
+    .managers-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    .managers-bio { text-align: center; }
+    .managers-bio h3 {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .managers-bio p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+    .managers-bio p:last-child { margin-bottom: 0; }
+
+    /* ══════════════════════════════════════
+       10. HOW IT WORKS SECTION
+    ══════════════════════════════════════ */
+    .process-section {
+      padding: 64px 16px;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    .step-number {
+      font-size: 48px;
+      font-weight: 700;
+      color: rgba(184,151,46,0.6);
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+    .process-step h3 {
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .process-step p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ══════════════════════════════════════
+       11. FINAL CTA SECTION
+    ══════════════════════════════════════ */
+    .final-cta {
+      padding: 80px 16px;
+      border-top: 1px solid var(--border-light);
+      text-align: center;
+    }
+    .cta-deco {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .cta-deco .line { width: 48px; height: 1px; background: rgba(184,151,46,0.6); }
+    .cta-deco .diamond { margin-top: 0; }
+    .final-cta h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .final-cta p {
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 32px;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      line-height: 1.7;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 20px 48px;
+      background: var(--navy);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 16px rgba(26,39,68,0.2);
+      transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+    }
+    .cta-btn:hover {
+      background: var(--navy-light);
+      box-shadow: 0 6px 24px rgba(26,39,68,0.3);
+      transform: translateY(-1px);
+    }
+    .cta-btn svg { width: 16px; height: 16px; transition: transform 0.2s; }
+    .cta-btn:hover svg { transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════
+       12. FOOTER
+    ══════════════════════════════════════ */
+    .footer {
+      padding: 48px 16px 64px;
+      border-top: 1px solid var(--border-light);
+      background: rgba(249,248,245,0.5);
+    }
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .footer-logo img { width: 80px; opacity: 0.6; }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+    .footer-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .footer-divider .line { width: 64px; height: 1px; background: var(--border); }
+    .footer-divider .dot {
+      width: 4px;
+      height: 4px;
+      transform: rotate(45deg);
+      background: rgba(184,151,46,0.5);
+    }
+    .footer-legal {
+      text-align: center;
+      max-width: 768px;
+      margin: 0 auto;
+    }
+    .footer-legal p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .footer-copyright {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-top: 24px;
+    }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (min-width: 640px) {
+      .hero-logo img { width: 140px; }
+      .hero h1 { font-size: 30px; }
+      .hero-sub .line { display: block; }
+      .project-header { flex-direction: row; align-items: center; justify-content: space-between; }
+      .play-btn-inner { width: 80px; height: 80px; }
+      .play-btn-inner svg { width: 32px; height: 32px; }
+    }
+
+    @media (min-width: 768px) {
+      .section-heading { font-size: 34px; }
+      .hero h1 { font-size: 34px; }
+      .calendly-section h2 { font-size: 24px; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .structure-grid { grid-template-columns: 1fr 1fr; }
+      .managers-content { flex-direction: row; gap: 56px; align-items: center; }
+      .managers-img { width: 320px; height: 320px; }
+      .managers-bio { text-align: left; }
+      .process-grid { grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+      .video-text p { font-size: 20px; }
+    }
+
+    @media (min-width: 1024px) {
+      .section-heading { font-size: 40px; }
+      .hero h1 { font-size: 40px; }
+      .projects-grid { grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+      .metrics-grid { grid-template-columns: repeat(4, 1fr); gap: 48px; }
+      .metric-value { font-size: 48px; }
+      .final-cta h2 { font-size: 36px; }
+      .final-cta { padding: 112px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ 1. HERO ═══════════ -->
+  <section class="hero">
+    <div class="hero-logo">
+      <img src="/images/momentum-logo.png" alt="Momentum Wealth Fund" />
+    </div>
+    <div class="hero-content">
+      <div><span class="hero-badge">Accredited Investors Only...</span></div>
+      <h1>
+        Schedule a Free Investment Briefing to Learn How Our Self-Storage Portfolio Has Delivered an Average
+        <span class="highlight">73.9% ARR</span> Since Inception
+      </h1>
+      <p class="hero-sub">
+        <span class="line"></span>
+        Get all the details then book your call below
+        <span class="line"></span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════ 2. VIDEO ═══════════ -->
+  <section class="video-section">
+    <div class="video-wrapper">
+      <div class="video-bg"></div>
+      <div class="video-pattern"></div>
+      <div class="video-text">
+        <p>Guy &amp; Nicki Varble</p>
+        <small>Fund Managers</small>
+      </div>
+      <button class="play-btn" aria-label="Play video">
+        <div class="play-btn-inner">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="8,5 20,12 8,19" /></svg>
+        </div>
+      </button>
+      <div class="video-corner"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 3. CALENDLY ═══════════ -->
+  <section id="calendly-section" class="calendly-section">
+    <div class="container-md">
+      <h2>Schedule Your Free Investment Briefing Below</h2>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/guyvarble/investor-meeting?hide_event_type_details=1&hide_gdpr_banner=1"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 4. PROJECTS ═══════════ -->
+  <section class="projects-section">
+    <div class="container-lg">
+      <div class="text-center">
+        <div class="section-label"><div class="line"></div><span>Portfolio</span><div class="line"></div></div>
+        <h2 class="section-heading">Our Track Record</h2>
+        <p class="section-subtext">Examples of past investments for illustrative purposes only. Past performance is not indicative of future results.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Danville -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="/images/project-danville.jpg" alt="Self-storage facility in Danville, IL" />
+            <div class="project-status">Sold</div>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Danville, IL</span>
+              </div>
+              <div class="project-arr">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span class="arr-value">367.3%</span>
+                <span class="arr-label">ARR</span>
+              </div>
+            </div>
+            <span class="project-type">Existing</span>
+            <div class="project-prices">
+              <div class="price-col"><p class="price-label">Purchase</p><p class="price-value">$800,000</p></div>
+              <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+              <div class="price-col"><p class="price-label">Sale Price</p><p class="price-value sale">$1,859,000</p></div>
+            </div>
+            <div class="project-stats">
+              <div class="stat-box"><p class="stat-label">Units</p><p class="stat-value">196</p></div>
+              <div class="stat-box"><p class="stat-label">Net Sq. Ft.</p><p class="stat-value">30,434</p></div>
+              <div class="stat-box"><p class="stat-label">Equity</p><p class="stat-value">$12,031</p></div>
+              <div class="stat-box"><p class="stat-label">Months Held</p><p class="stat-value">34</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Franklin -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="/images/project-franklin.jpg" alt="Self-storage facility in Franklin, NC" />
+            <div class="project-status">Sold</div>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Franklin, NC</span>
+              </div>
+              <div class="project-arr">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span class="arr-value">159.7%</span>
+                <span class="arr-label">ARR</span>
+              </div>
+            </div>
+            <span class="project-type">Expansion</span>
+            <div class="project-prices">
+              <div class="price-col"><p class="price-label">Purchase</p><p class="price-value">$775,000</p></div>
+              <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+              <div class="price-col"><p class="price-label">Sale Price</p><p class="price-value sale">$1,522,000</p></div>
+            </div>
+            <div class="project-stats">
+              <div class="stat-box"><p class="stat-label">Units</p><p class="stat-value">109</p></div>
+              <div class="stat-box"><p class="stat-label">Net Sq. Ft.</p><p class="stat-value">15,143</p></div>
+              <div class="stat-box"><p class="stat-label">Equity</p><p class="stat-value">$16,906</p></div>
+              <div class="stat-box"><p class="stat-label">Months Held</p><p class="stat-value">28</p></div>
+              <div class="stat-box full"><p class="stat-label">CAPEX</p><p class="stat-value">$473,746</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hampton -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="/images/project-hampton.jpg" alt="Self-storage facility in Hampton, TN" />
+            <div class="project-status">Sold</div>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Hampton, TN</span>
+              </div>
+              <div class="project-arr">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span class="arr-value">158.4%</span>
+                <span class="arr-label">ARR</span>
+              </div>
+            </div>
+            <span class="project-type">Expansion</span>
+            <div class="project-prices">
+              <div class="price-col"><p class="price-label">Purchase</p><p class="price-value">$725,000</p></div>
+              <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+              <div class="price-col"><p class="price-label">Sale Price</p><p class="price-value sale">$1,085,000</p></div>
+            </div>
+            <div class="project-stats">
+              <div class="stat-box"><p class="stat-label">Units</p><p class="stat-value">127</p></div>
+              <div class="stat-box"><p class="stat-label">Net Sq. Ft.</p><p class="stat-value">23,830</p></div>
+              <div class="stat-box"><p class="stat-label">Equity</p><p class="stat-value">$21,000</p></div>
+              <div class="stat-box"><p class="stat-label">Months Held</p><p class="stat-value">33</p></div>
+              <div class="stat-box full"><p class="stat-label">CAPEX</p><p class="stat-value">$116,000</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="projects-disclaimer">These case examples are provided for educational purposes only and represent historical investments. Individual project outcomes vary based on market conditions, timing, and other factors. No guarantee or promise of similar results is made or implied.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ 5. FAQ ═══════════ -->
+  <section class="faq-section">
+    <div class="container-sm">
+      <div class="text-center">
+        <div class="section-label"><div class="line"></div><span>Learn More</span><div class="line"></div></div>
+        <h2 class="section-heading">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question"><span>What is the Momentum Wealth Fund?</span><div class="faq-icon"></div></button>
+          <div class="faq-answer"><div class="faq-answer-inner">The Momentum Wealth Fund is a private real estate investment vehicle focused on acquiring, operating, and improving self-storage facilities across the United States. The fund provides accredited investors with exposure to a diversified portfolio of self-storage assets managed by experienced operators.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>Who is eligible to invest?</span><div class="faq-icon"></div></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Participation in the Momentum Wealth Fund is limited to accredited investors as defined by SEC regulations. All investors must complete third-party verification of their accredited status before participation. This requirement ensures compliance with Rule 506(c) of Regulation D.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>What is the minimum investment?</span><div class="faq-icon"></div></button>
+          <div class="faq-answer"><div class="faq-answer-inner">The minimum investment amount is $100,000. This threshold may be adjusted at the discretion of the fund managers. Please schedule an investment briefing to discuss current investment parameters and eligibility requirements.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>What types of returns does the fund target?</span><div class="faq-icon"></div></button>
+          <div class="faq-answer"><div class="faq-answer-inner">The fund seeks competitive risk-adjusted returns based on historical performance data and prevailing market conditions within the self-storage sector. Return targets are informed by industry benchmarks and operational projections but are not guaranteed. All investments carry risk, including the potential loss of principal.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>Why self-storage?</span><div class="faq-icon"></div></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Self-storage has historically demonstrated resilience across various economic cycles due to several demand drivers including life transitions, business storage needs, and urbanization trends. The asset class offers operational flexibility with month-to-month leases, relatively low tenant turnover costs, and scalable management systems. However, past performance is not indicative of future results, and market conditions can change.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>What fees are involved?</span><div class="faq-icon"></div></button>
+          <div class="faq-answer"><div class="faq-answer-inner">The fund charges an annual management fee based on assets under management and operates with a preferred return structure for investors. Detailed fee information, including the management fee percentage, preferred return rate, and profit split structure, is provided in the Private Placement Memorandum. All fees are structured to align manager and investor interests.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>What is the team's experience?</span><div class="faq-icon"></div></button>
+          <div class="faq-answer"><div class="faq-answer-inner">The management team has transacted on 29 self-storage facilities across 17 states, representing significant experience in acquisition, repositioning, and operations within the self-storage sector. The team brings backgrounds in real estate investment, property management, and financial analysis.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question"><span>How do real estate tax considerations typically work?</span><div class="faq-icon"></div></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Real estate investments may offer certain tax considerations such as depreciation deductions and the potential for cost segregation studies to accelerate depreciation. These strategies can impact the timing and character of taxable income. This information is educational only and not tax advice. Investors should consult qualified tax professionals regarding their specific situations.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 6. TESTIMONIALS ═══════════ -->
+  <section class="testimonials-section">
+    <div class="container-lg">
+      <div class="text-center">
+        <div class="section-label"><div class="line"></div><span>Testimonials</span><div class="line"></div></div>
+        <h2 class="section-heading">What Investors Have Shared</h2>
+        <p class="section-subtext">Feedback from accredited investors regarding their experience with the Momentum Wealth Fund team.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p class="testimonial-text">The communication and transparency from the Momentum team has been exceptional. I receive detailed quarterly reports and always feel informed about portfolio operations and market conditions.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"><span>M</span></div>
+            <div><p class="testimonial-name">Michael R.</p><p class="testimonial-role">Accredited Investor</p></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p class="testimonial-text">What impressed me most was the professionalism and thoroughness of the due diligence process. The team took time to answer all my questions and provided comprehensive documentation.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"><span>S</span></div>
+            <div><p class="testimonial-name">Sarah T.</p><p class="testimonial-role">Accredited Investor</p></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p class="testimonial-text">The operational discipline and reporting quality have exceeded our expectations. We appreciate the data-driven approach and clear communication about both opportunities and challenges.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"><span>D</span></div>
+            <div><p class="testimonial-name">David &amp; Jennifer L.</p><p class="testimonial-role">Accredited Investors</p></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p class="testimonial-text">Guy and Nicki demonstrate a genuine commitment to investor education. The briefing process helped us understand the self-storage sector before making any investment decisions.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"><span>R</span></div>
+            <div><p class="testimonial-name">Robert K.</p><p class="testimonial-role">Accredited Investor</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 7. METRICS ═══════════ -->
+  <section class="metrics-section">
+    <div class="container-lg">
+      <div class="text-center">
+        <div class="section-label"><div class="line"></div><span>Performance</span><div class="line"></div></div>
+        <h2 class="section-heading">Momentum Wealth Overview</h2>
+        <p class="section-subtext">Historical operational metrics as of the most recent reporting period. Past performance is not indicative of future results.</p>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <p class="metric-value">8,000+</p>
+          <div class="metric-divider"></div>
+          <p class="metric-label">Rentable Units Managed</p>
+        </div>
+        <div class="metric-item">
+          <p class="metric-value">$92M+</p>
+          <div class="metric-divider"></div>
+          <p class="metric-label">Total Portfolio Value</p>
+        </div>
+        <div class="metric-item">
+          <p class="metric-value">29</p>
+          <div class="metric-divider"></div>
+          <p class="metric-label">Facilities Transacted</p>
+        </div>
+        <div class="metric-item">
+          <p class="metric-value">17</p>
+          <div class="metric-divider"></div>
+          <p class="metric-label">States Operated In</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 8. FUND STRUCTURE ═══════════ -->
+  <section class="structure-section">
+    <div class="container-lg">
+      <div class="text-center">
+        <div class="section-label"><div class="line"></div><span>Structure</span><div class="line"></div></div>
+        <h2 class="section-heading">How the Fund Is Structured</h2>
+        <p class="section-subtext">The fund allows accredited investors to gain exposure to a diversified self-storage portfolio rather than owning and operating a single facility themselves.</p>
+      </div>
+      <div class="structure-grid">
+        <div class="structure-card">
+          <div class="structure-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01"/></svg>
+          </div>
+          <div>
+            <h3>Asset-Backed Ownership</h3>
+            <p>Investors gain exposure to physical self-storage real estate assets through the fund structure.</p>
+          </div>
+        </div>
+        <div class="structure-card">
+          <div class="structure-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div>
+            <h3>Operational Improvements</h3>
+            <p>The fund targets under-performing facilities and implements revenue and operational enhancements.</p>
+          </div>
+        </div>
+        <div class="structure-card">
+          <div class="structure-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h3>Professional Management</h3>
+            <p>Experienced operators handle all aspects of acquisition, management, and asset optimization.</p>
+          </div>
+        </div>
+        <div class="structure-card">
+          <div class="structure-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h3>Portfolio Diversification</h3>
+            <p>Exposure to multiple facilities across various markets rather than concentration in a single asset.</p>
+          </div>
+        </div>
+      </div>
+      <div class="operational-box">
+        <h3>Operational Approach</h3>
+        <ul class="operational-list">
+          <li><div class="diamond"></div><span>Acquiring under-performing self-storage facilities with value-add potential</span></li>
+          <li><div class="diamond"></div><span>Implementing operational and revenue improvements through professional management</span></li>
+          <li><div class="diamond"></div><span>Managing assets with a long-term, disciplined investment strategy</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 9. MANAGERS ═══════════ -->
+  <section class="managers-section">
+    <div class="container-md">
+      <div class="text-center">
+        <div class="section-label"><div class="line"></div><span>Leadership</span><div class="line"></div></div>
+        <h2 class="section-heading">Meet the Managers</h2>
+      </div>
+      <div class="managers-content">
+        <div class="managers-img">
+          <img src="/images/guy-nicki.jpg" alt="Guy & Nicki Varble - Fund Managers" />
+        </div>
+        <div class="managers-bio">
+          <h3>Guy &amp; Nicki Varble</h3>
+          <p>Guy and Nicki Varble bring extensive experience in self-storage acquisition, operations, and asset management. Their approach combines rigorous financial analysis with hands-on operational expertise developed through managing facilities across multiple markets.</p>
+          <p>Their investment philosophy emphasizes disciplined underwriting, thorough due diligence, and long-term value creation. They view their role as stewards of investor capital, prioritizing transparency, communication, and data-driven decision-making.</p>
+          <p>The Varbles are committed to providing investors with comprehensive information and maintaining open communication throughout the investment lifecycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 10. HOW IT WORKS ═══════════ -->
+  <section class="process-section">
+    <div class="container-md">
+      <div class="text-center">
+        <div class="section-label"><div class="line"></div><span>Process</span><div class="line"></div></div>
+        <h2 class="section-heading">How It Works</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Schedule an Investment Briefing</h3>
+          <p>Begin with an educational conversation to determine eligibility and alignment with your investment objectives.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Review Offering Materials</h3>
+          <p>Receive and review the Private Placement Memorandum, subscription documents, and all relevant disclosures.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <h3>Complete Documentation</h3>
+          <p>Participate as an investor only after accredited status is verified through a third-party service and all legal documents are completed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 11. FINAL CTA ═══════════ -->
+  <section class="final-cta">
+    <div class="cta-deco">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
+    <h2>Schedule a Free Investment Briefing</h2>
+    <p>For accredited investors seeking to learn more about self-storage real estate and the Momentum Wealth Fund investment opportunity.</p>
+    <a href="#calendly-section" class="cta-btn">
+      Schedule Your Briefing
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </a>
+  </section>
+
+  <!-- ═══════════ 12. FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <img src="/images/momentum-logo.png" alt="Momentum Wealth Fund" />
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Investment Disclaimer</a>
+    </div>
+    <div class="footer-divider">
+      <div class="line"></div>
+      <div class="dot"></div>
+      <div class="line"></div>
+    </div>
+    <div class="footer-legal">
+      <p>Securities offered through the Momentum Wealth Fund are available only to verified accredited investors pursuant to Rule 506(c) of Regulation D under the Securities Act of 1933. All investments involve risk, including the potential loss of principal. Past performance is not indicative of future results.</p>
+      <p>This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities. Any such offer may only be made pursuant to the fund's Private Placement Memorandum and related subscription documents.</p>
+      <p>This site is not a part of the Facebook website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook in any way. Facebook is a trademark of Meta Platforms, Inc.</p>
+      <p class="footer-copyright">2026 Momentum Wealth Fund</p>
+    </div>
+  </footer>
+
+  <!-- Calendly Widget Script -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <!-- FAQ Accordion -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        var isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(function(el) {
+          el.classList.remove('active');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
